@@ -1,0 +1,57 @@
+type Query {
+    Welcome: String
+    GetCurrentUser: User
+    GetAllUsers: [User]
+}
+
+type Mutation {
+    CreateUser(input: UserInput): Response
+    Login(input: LoginRequest): LoginResponse
+}
+
+
+type Response {
+    status: Boolean
+    message: String
+}
+type LoginResponse {
+    token: String
+    user: User
+}
+input LoginRequest {
+    username: String
+    password: String
+}
+
+type User {
+
+    id: ID
+    firstName: String
+    lastName: String
+    password: String
+    address: String
+    country: String
+    state: String
+    city: String
+    username: String
+    zipCode: String
+    about: String
+
+}
+
+
+input UserInput {
+
+    id: ID
+    firstName: String
+    lastName: String
+    password: String
+    address: String
+    country: String
+    state: String
+    city: String
+    username: String
+    zipCode: String
+    about: String
+
+}

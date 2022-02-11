@@ -1,0 +1,100 @@
+{
+  "pages": {
+    "home": {
+      "companies": [
+        {
+          "name": "",
+          "url-image": ""
+        }
+      ],
+      "achievements": {
+        "number": "",
+        "name": ""
+      },
+      "featuresCategories": {
+        "name": "",
+        "description": ""
+      },
+      "reviews": [
+        {
+          "name": "",
+          "title": "",
+          "image-url": "",
+          "message": ""
+        }
+      ]
+    },
+    "contactUs": {
+      "message": {
+        "name": "",
+        "email": "",
+        "phoneNumber": "",
+        "message": ""
+      }
+    },
+    "calender": {
+      "event": {
+        "title": "",
+        "description": "",
+        "textColor": "",
+        "allDay": "Boolean",
+        "start": "",
+        "end": ""
+      }
+    },
+    "login": {
+      "email": "",
+      "password": ""
+    },
+    "register": {
+      "skills": [
+        "",
+        ""
+      ],
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "country": "",
+      "state": "",
+      "city": "",
+      "email": "",
+      "password": ""
+    },
+    "account": {
+      "general": {
+        "skills": [
+          "",
+          ""
+        ],
+        "firstName": "",
+        "lastName": "",
+        "address": "",
+        "country": "",
+        "state": "",
+        "city": "",
+        "email": "",
+        "zipCode": "",
+        "about": ""
+      },
+      "changePassword": {
+        "oldPassword": "",
+        "newPassword": ""
+      }
+    },
+    "Results": {
+      "tests": [
+        {
+          "name": "",
+          "marks": "",
+          "description": ""
+        }
+      ]
+    },
+    "notifications": {
+      "title": "",
+      "message": "",
+      "time": "",
+      "icon": ""
+    }
+  }
+}
