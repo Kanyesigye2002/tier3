@@ -18,5 +18,6 @@ public class Notification {
     private String time;
     private String message;
     private String icon;
+    private Boolean isRead;
 
 }

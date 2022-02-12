@@ -18,6 +18,6 @@ public class AcademicHistory {
     private String grade;
     private String score;
     private String year;
-    private String Description;
+    private String description;
 
 }

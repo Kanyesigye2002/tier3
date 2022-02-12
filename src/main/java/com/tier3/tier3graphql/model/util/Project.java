@@ -21,6 +21,6 @@ public class Project {
     private String end;
     private String status;
     private String skillRate;
-    private String Description;
+    private String description;
 
 }

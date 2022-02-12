@@ -19,6 +19,6 @@ public class JobHistory {
     private String start;
     private String end;
     private String status;
-    private String Description;
+    private String description;
 
 }
