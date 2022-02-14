@@ -2,11 +2,44 @@ type Query {
     Welcome: String
     GetCurrentUser: User
     GetAllUsers: [User]
+    GetHomePage: HomePage
+    GetAllMessages: [Message]
+    GetEventById(input: ID): Event
+    GetAllEvents: [Event]
+    GetProjectById(input: ID): Project
+    GetAllProjects: [Project]
+    GetSpecializationById(input: ID): Specialization
+    GetAllSpecializations: [Specialization]
+    GetAcademicHistoryById(input: ID): AcademicHistory
+    GetAllAcademicHistories: [AcademicHistory]
+    GetJobHistoryById(input: ID): JobHistory
+    GetAllJobHistories: [JobHistory]
 }
 
 type Mutation {
     CreateUser(input: UserInput): Response
+    UpdateUser(input: UserInput): Response
     Login(input: LoginRequest): LoginResponse
+
+    CreateMailVerification(input: String): Response
+    CreateNewPassword(input: String): Response
+    CreateForgotPassword(input: String): Response
+    VerifyEmail(input: String): Response
+    VerifyNewPassword(input: String): Response
+    VerifyForgotPassword(input: String, password: String): Response
+
+    ContactUs(input: MessageInput): LoginResponse
+    CreateHome(input: HomePageInput): LoginResponse
+    CreateEvent(input: EventInput): Event
+    UpdateEvent(input: EventInput): Event
+    CreateProject(input: ProjectInput): Project
+    UpdateProject(input: ProjectInput): Project
+    CreateSpecialization(input: SpecializationInput): Specialization
+    UpdateSpecialization(input: SpecializationInput): Specialization
+    CreateJobHistory(input: JobHistoryInput): JobHistory
+    UpdateJobHistory(input: JobHistoryInput): JobHistory
+    CreateAcademicHistory(input: AcademicHistoryInput): AcademicHistory
+    UpdateAcademicHistory(input: AcademicHistoryInput): AcademicHistory
 }
 
 
@@ -37,7 +70,128 @@ type User {
     zipCode: String
     about: String
 
+    tests: [Test]
+    skills: [StringComp]
+    specializations: [Specialization]
+    academicHistories: [AcademicHistory]
+    jobHistories: [JobHistory]
+    projects: [Project]
+    notifications: [Notification]
+    events: [Event]
 }
+
+type Message {
+    id: ID
+    name: String
+    email: String
+    phoneNumber: String
+    message: String
+}
+
+type HomePage {
+    id: ID
+    reviews: [Review]
+    companies: [Company]
+    achievements: [Achievement]
+    featureCategories: [FeaturesCategory]
+}
+
+type Company {
+    id: ID
+    name: String
+    urlImage: String
+}
+
+type Achievement {
+    id: ID
+    name: String
+    number: String
+}
+
+type FeaturesCategory {
+    id: ID
+    name: String
+    description: String
+}
+
+type Review {
+    id: ID
+    name: String
+    title: String
+    urlImage: String
+    message: String
+}
+
+type Event {
+    id: ID
+    title: String
+    description: String
+    color: String
+     allDay: String
+    start: String
+    end: String
+}
+
+type Project {
+    id: ID
+    title: String
+    imageUrl: String
+    category: String
+    start: String
+    end: String
+    status: String
+    skillRate: String
+    description: String
+}
+
+type JobHistory {
+    id: ID
+    title: String
+    category: String
+    start: String
+    end: String
+    status: String
+    description: String
+}
+
+type AcademicHistory {
+    id: ID
+    title: String
+    grade: String
+    score: String
+    year: String
+    description: String
+}
+
+type Specialization {
+    id: ID
+    speciality: String
+    years: String
+    description: String
+}
+
+type StringComp {
+    id: ID
+    s: String
+}
+
+type Test {
+    id: ID
+    name: String
+    marks: String
+    description: String
+}
+
+type Notification {
+    id: ID
+    title: String
+    time: String
+    message: String
+    icon: String
+    isRead: Boolean
+}
+
+
 
 
 input UserInput {
@@ -54,4 +208,121 @@ input UserInput {
     zipCode: String
     about: String
 
+
+    skills: [StringCompInput]
+
+}
+
+input UpdatePassword {
+    id: ID
+}
+
+input MessageInput {
+    id: ID
+    name: String
+    email: String
+    phoneNumber: String
+    message: String
+}
+
+input HomePageInput {
+    id: ID
+    reviews: [ReviewInput]
+    companies: [CompanyInput]
+    achievements: [AchievementInput]
+    featureCategories: [FeaturesCategoryInput]
+}
+
+input CompanyInput {
+    id: ID
+    name: String
+    urlImage: String
+}
+
+input AchievementInput {
+    id: ID
+    name: String
+    number: String
+}
+
+input FeaturesCategoryInput {
+    id: ID
+    name: String
+    description: String
+}
+
+input ReviewInput {
+    id: ID
+    name: String
+    title: String
+    urlImage: String
+    message: String
+}
+
+input EventInput {
+    id: ID
+    title: String
+    description: String
+    color: String
+    allDay: String
+    start: String
+    end: String
+}
+
+input ProjectInput {
+    id: ID
+    title: String
+    imageUrl: String
+    category: String
+    start: String
+    end: String
+    status: String
+    skillRate: String
+    description: String
+}
+
+input JobHistoryInput {
+    id: ID
+    title: String
+    category: String
+    start: String
+    end: String
+    status: String
+    description: String
+}
+
+input AcademicHistoryInput {
+    id: ID
+    title: String
+    grade: String
+    score: String
+    year: String
+    description: String
+}
+
+input SpecializationInput {
+    id: ID
+    speciality: String
+    years: String
+    description: String
+}
+
+input StringCompInput {
+    id: ID
+    s: String
+}
+input TestInput {
+    id: ID
+    name: String
+    marks: String
+    description: String
+}
+
+input NotificationInput {
+    id: ID
+    title: String
+    time: String
+    message: String
+    icon: String
+    isRead: Boolean
 }

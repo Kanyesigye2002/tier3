@@ -18,12 +18,12 @@ type Query {
 
 type Mutation {
     CreateUser(input: UserInput): Response
+    UpdateUser(input: UserInput): Response
     Login(input: LoginRequest): LoginResponse
 
     CreateMailVerification(input: String): Response
     CreateNewPassword(input: String): Response
     CreateForgotPassword(input: String): Response
-
     VerifyEmail(input: String): Response
     VerifyNewPassword(input: String): Response
     VerifyForgotPassword(input: String, password: String): Response
@@ -38,7 +38,7 @@ type Mutation {
     UpdateSpecialization(input: SpecializationInput): Specialization
     CreateJobHistory(input: JobHistoryInput): JobHistory
     UpdateJobHistory(input: JobHistoryInput): JobHistory
-    CreateHistory(input: AcademicHistoryInput): AcademicHistory
+    CreateAcademicHistory(input: AcademicHistoryInput): AcademicHistory
     UpdateAcademicHistory(input: AcademicHistoryInput): AcademicHistory
 }
 

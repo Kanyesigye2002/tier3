@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of("https://vumah.webers-droid.com/","https://main.webers-droid..com/","http://localhost:3000/"));
+        config.setAllowedOrigins(List.of("https://vumah.webers-droid.com/","https://main.webers-droid..com/","http://localhost:3031/"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowedMethods(List.of("*"));
         source.registerCorsConfiguration("/**", config);

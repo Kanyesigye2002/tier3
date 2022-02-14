@@ -78,6 +78,9 @@ public class UserService implements UserDetailsService {
     }
 
     public JWTUserDetails loadUserByToken(String token) {
+
+
+
         return getDecodedToken(token)
                 .map(DecodedJWT::getSubject)
                 .flatMap(userRepository::findByUsername)
