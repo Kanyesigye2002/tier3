@@ -28,8 +28,8 @@ type Mutation {
     VerifyNewPassword(input: String): Response
     VerifyForgotPassword(input: String, password: String): Response
 
-    ContactUs(input: MessageInput): LoginResponse
-    CreateHome(input: HomePageInput): LoginResponse
+    ContactUs(input: MessageInput): Response
+    CreateHome(input: HomePageInput): Response
     CreateEvent(input: EventInput): Event
     UpdateEvent(input: EventInput): Event
     CreateProject(input: ProjectInput): Project
@@ -69,6 +69,9 @@ type User {
     username: String
     zipCode: String
     about: String
+    phoneNumber: String
+    isPublic: String
+    photoURL: String
 
     tests: [Test]
     skills: [StringComp]
@@ -195,7 +198,6 @@ type Notification {
 
 
 input UserInput {
-
     id: ID
     firstName: String
     lastName: String
@@ -207,10 +209,11 @@ input UserInput {
     username: String
     zipCode: String
     about: String
-
+    phoneNumber: String
+    isPublic: String
+    photoURL: String
 
     skills: [StringCompInput]
-
 }
 
 input UpdatePassword {

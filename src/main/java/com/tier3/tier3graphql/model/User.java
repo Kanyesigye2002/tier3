@@ -23,6 +23,9 @@ public class User {
     private String state;
     private String city;
     private String username;
+    private String phoneNumber;
+    private String isPublic;
+    private String photoURL;
     private String zipCode;
     private String about;
     private boolean enabled = false;

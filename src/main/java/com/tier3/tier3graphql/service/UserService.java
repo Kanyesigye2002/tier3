@@ -413,10 +413,18 @@ public class UserService implements UserDetailsService {
     }
 
     public User UpdateUserInfo(User user) {
-        User originalUser = getUser(user.getId());
+        User originalUser = getCurrentUser();
         originalUser.setAddress(user.getAddress());
         originalUser.setCity(user.getCity());
+        originalUser.setPhotoURL(user.getPhotoURL());
+        originalUser.setPhoneNumber(user.getPhoneNumber());
+        originalUser.setIsPublic(user.getIsPublic());
+        originalUser.setAbout(user.getAbout());
+        originalUser.setFirstName(user.getFirstName());
+        originalUser.setLastName(user.getLastName());
+        originalUser.setState(user.getState());
         originalUser.setCountry(user.getCountry());
+        originalUser.setZipCode(user.getZipCode());
         return originalUser;
     }
 
